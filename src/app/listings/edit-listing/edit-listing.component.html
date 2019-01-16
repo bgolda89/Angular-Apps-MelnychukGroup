@@ -1,0 +1,106 @@
+<div class="whiteboard">    
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"><i class="fas fa-edit"></i>Edit Listing Details</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group">
+            <!-- goBack() methos to back to previous component -->
+            <button class="btn btn-sm btn-outline-secondary" (click)="goBack()">Go Back</button>
+        </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="pricing-header form-block mx-auto">
+    
+            <!-- Listing's Edit Form -->
+            <form [formGroup]="editForm" (ngSubmit)="updateForm()" novalidate>
+                <div class="row">
+                    <div class="col-lg-10 col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label>Listing Type</label>
+                            <div class="row">
+                                <label class="md-check col-lg-3">
+                                    <input type="radio" value="SF Home" name="listingType" formControlName="listingType">
+                                    <i class="fas fa-home"></i>Single Family Home
+                                    </label>
+                                    <label class="md-check col-lg-3">
+                                    <input type="radio" value="Condo" name="listingType" formControlName="listingType">     
+                                    <i class="fas fa-building"></i>Condo
+                                    </label>
+                                    <label class="md-check col-lg-3">
+                                        <input type="radio" value="Buyer" name="listingType" formControlName="listingType">
+                                        <i class="fas fa-money-bill-alt"></i>Buyer
+                                    </label>
+                                    <label class="md-check col-lg-3">
+                                        <input type="radio" value="Seller" name="listingType" formControlName="listingType">     
+                                        <i class="fas fa-shopping-cart"></i>Seller
+                                    </label>
+                                </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                                <label>Buyer / Seller</label>
+                                <input type="text" formControlName="buyerSeller" class="form-control" required>   <!--// formControlName is used to commnunicate to formGroup's properties -->
+                                <p *ngIf="buyerSeller.touched && buyerSeller.invalid" class="error"><sup>*</sup>Please enter buyer / seller name</p>   <!-- // Accessing fromGoup object's property using Getter method -->
+                                <p *ngIf="buyerSeller.errors?.minlength" class="error"><sup>*</sup>Buyer / seller shouldn't be less than 2 letters</p>         <!-- // Accessing Reactive Forms error property using Getter method -->
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Contact Info</label>
+                                <input type="text" formControlName="contactInfo" class="form-control">
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <label>Property Info</label>
+                                <input type="text" formControlName="propertyInfo" class="form-control">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                    <label>Region</label>
+                                    <input type="text" formControlName="listingRegion" class="form-control">
+                                </div>          
+                            <div class="col-md-2 mb-3">
+                                <label>Listing Price</label>
+                                <input type="number" formControlName="price" class="form-control">
+                            </div>          
+                            <div class="col-md-2 mb-3">
+                                <label>Price Reduced</label>
+                                <input type="checkbox" formControlName="priceReduced" class="form-control" value="listingFrom.priceReduced=false">
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                    <label>Listing ID</label>
+                                    <input type="text" formControlName="listingID" class="form-control">
+                            </div> 
+                            <div class="col-md-3 mb-3">
+                                <label>Expiration Date</label>
+                                <input type="date" formControlName="expireDate" class="form-control">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                    <label>Possession Date</label>
+                                    <input type="date" formControlName="possessionDate" class="form-control">
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                        <label>Sale Price</label>
+                                        <input type="number" formControlName="pendingPrice" class="form-control">
+                                    </div>     
+                                    <div class="col-md-2 mb-3">
+                                        <label>Pending</label>
+                                        <input type="checkbox" formControlName="pending" class="form-control" value="listingFrom.priceReduced=false">
+                                    </div>          
+                                    <div class="col-md-5 mb-3">
+                                        <label>Notes</label>
+                                        <input type="text" formControlName="pendingCode" class="form-control">
+                                    </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-success btn-block" [disabled]="!editForm.valid">
+                            Update Listing
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </form>
+            <!-- Listing's Edit Form ends-->
+            
+        </div>
+        </div>
+    </div>
+</div>

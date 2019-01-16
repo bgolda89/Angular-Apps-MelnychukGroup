@@ -1,0 +1,106 @@
+<div class="whiteboard">
+    <div class="col-md-12">
+        <h1 class="h2"><i class="fas fa-trash-alt"></i>Deleted Listings</h1> 
+    </div>
+  <mat-table matSort [dataSource]="dataSource">
+
+  <!-- Buyer/Seller Definition -->
+    <ng-container cdkColumnDef="buyerSeller">
+      <mat-header-cell 
+      class="left-header-border buyer-seller-header name-header" 
+      mat-sort-header 
+      *cdkHeaderCellDef> Seller </mat-header-cell>
+      <mat-cell class="left-border buyer-seller-cell name-data" 
+      *cdkCellDef="let row"> {{row.buyerSeller}} </mat-cell>
+    </ng-container>
+
+  <!-- Contact Info Definition -->
+    <ng-container cdkColumnDef="contactInfo">
+      <mat-header-cell 
+      class="contact-info-header name-header" 
+      mat-sort-header
+      *cdkHeaderCellDef> Agent </mat-header-cell>
+      <mat-cell class="contact-info-cell name-data" 
+      *cdkCellDef="let row"> {{row.contactInfo}} </mat-cell>
+    </ng-container>
+
+  <!-- Property Info Definition -->
+  <ng-container cdkColumnDef="propertyInfo">
+      <mat-header-cell 
+      class="property-info-header address-header" 
+      mat-sort-header 
+      *cdkHeaderCellDef> Property Info </mat-header-cell>
+      <mat-cell class="property-info-cell address-data" 
+      *cdkCellDef="let row"> {{row.propertyInfo}} </mat-cell>
+    </ng-container>
+    
+  <!-- Area Definition -->
+    <ng-container cdkColumnDef="listingRegion">
+      <mat-header-cell 
+      class="listing-region-header region-header" 
+      mat-sort-header 
+      *cdkHeaderCellDef> Area </mat-header-cell>
+      <mat-cell class="listing-region-cell region-data" 
+      *cdkCellDef="let row"> {{row.listingRegion}} </mat-cell>
+    </ng-container>
+
+  <!-- Price Definition -->
+    <ng-container cdkColumnDef="price">
+      <mat-header-cell 
+      class="price-header" 
+      mat-sort-header 
+      *cdkHeaderCellDef>  Price </mat-header-cell>
+      <mat-cell class="price-cell"
+      [ngClass]="{'reduced': row.priceReduced === true}" 
+      *cdkCellDef="let row"> $ {{row.priceF}} </mat-cell>
+    </ng-container>
+
+  <!-- Listing ID Definition -->
+    <ng-container cdkColumnDef="listingID">
+      <mat-header-cell 
+      class="listing-ID-header" 
+      mat-sort-header 
+      *cdkHeaderCellDef> Listing ID </mat-header-cell>
+      <mat-cell class="listing-ID-cell" 
+      *cdkCellDef="let row"> {{row.listingID}} </mat-cell>
+    </ng-container>  
+
+  <!-- Notes Definition -->
+    <ng-container cdkColumnDef="pendingCode">
+      <mat-header-cell 
+      class="notes-header" 
+      mat-sort-header 
+      *cdkHeaderCellDef> Notes </mat-header-cell>
+      <mat-cell class="notes-cell" 
+      *cdkCellDef="let row"> {{row.pendingCode}} </mat-cell>
+    </ng-container>
+
+  <!-- Possession Date Definition -->
+    <ng-container cdkColumnDef="expireDate">
+      <mat-header-cell 
+      class="date-header" 
+      mat-sort-header 
+      *cdkHeaderCellDef> Expiration Date </mat-header-cell>
+      <mat-cell class="date-cell" 
+      *cdkCellDef="let row"> {{row.expireDate | date:'longDate'}} </mat-cell>
+    </ng-container>
+
+  <!-- Edit Delete Definition -->
+    <ng-container cdkColumnDef="editDelete">
+      <mat-header-cell 
+      class="right-header-border"  
+      *cdkHeaderCellDef> Restore/Delete </mat-header-cell>
+      <mat-cell class="property-info-cell address-data" *cdkCellDef="let row">
+        <i class="fas fa-redo" (click)="restoreListing(row)"></i>
+        <i class="far fa-trash-alt" (click)="deleteListing(row)"></i>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row 
+    *cdkRowDef="let row; columns: displayedColumns"
+    [ngClass]="{'highlight': row.pending === true}"></mat-row>
+  </mat-table>
+  <mat-paginator hidePageSize="false" [pageSizeOptions]="[15,50,100]" showFirstLastButtons></mat-paginator>
+</div>

@@ -1,1 +1,227 @@
 /* You can add global styles to this file, and also import other style files */
+/* text styling */
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans'); */ 
+/* * {
+  font-family: 'Noto Sans', sans-serif;
+} */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0px;
+}
+mat-table{
+  box-shadow: 3px 0 6px rgba(0,0,0,.25);
+}
+.mat-paginator-container {
+  background: #d3d3d365;
+}
+.mat-header-cell{
+  font-size: 15px;
+  background: #5107c98f;
+  color: white;
+  text-shadow: 0px 2px 2px rgb(0, 0, 0) !important; 
+  /* font-weight: bold !important; */
+}
+.mat-sort-header-button{
+  text-shadow: 0px 2px 2px rgb(0, 0, 0) !important; 
+}
+mat-paginator{
+  box-shadow: 3px 0 6px rgba(0,0,0,.25);
+}
+mat-row {
+  min-height: 15px !important;
+}
+h1.h2 {
+  text-transform: uppercase;
+  font-size: 25px;
+  color: rgb(48, 0, 110);
+  /* text-shadow: 0px 0px 1px rgb(87, 87, 87); */
+
+}
+
+/* form styling */
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid red;
+} 
+
+/* table styling */
+.whiteboard {
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px 15px 20px;
+  border: 5px solid rgba(29, 250, 250, 0.123);
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-bottom: 5px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.25);
+  background: rgb(255, 255, 255);
+}
+
+.highlight{
+  background: 	rgba(21, 247, 255, 0.788);
+}
+
+
+
+/* icon styling */
+.fas {
+  padding: 10px;
+}
+
+.far {
+  padding: 10px;
+}
+
+.preloader-icon {
+  padding: 150px;
+}
+
+/* toastr styling */
+#toast-container > div {
+  opacity:1;
+}
+
+.name-data{
+  font-weight: bold;
+}
+
+.notes-cell {
+  font-weight: bold;
+  color: black;
+}
+
+.price-cell {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px !important;
+  /* text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.651);  */
+}
+
+.address-data {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.date-cell{
+  /* text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);  */
+  font-size: 16px;
+}
+
+.region-data {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.listing-ID-cell{
+  /* font-weight: bold; */
+  font-size: 16px;
+  /* color: darkgreen; */
+  /* text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);  */
+}
+
+.reduced{
+  color: rgb(235, 2, 2);
+  font-weight: bold;
+}
+
+.mat-column-propertyInfo {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-editDelete {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-listingID {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-price {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-pendingCode {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 18% !important;
+  width: 18% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-listingRegion {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
